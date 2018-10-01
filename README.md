@@ -34,5 +34,3 @@ Once you have cloned the project, you can run the following command from within 
 ember serve
 ```
 You will see some output letting you know which URL to enter in order to access the app. It will most likely be `localhost:4200`
-
-testing
