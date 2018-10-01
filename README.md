@@ -8,9 +8,9 @@
 | ) \ \__| (____/\| (____/\   | |   | (____/\| (____/\| (___) || )      /\____) |
 |/   \__/(_______/(_______/   \_/   (_______/(_______/(_______)|/       \_______)
 ```
-[About](#about)
-[Getting Started With Ember](#getting-started-with-ember)
-[Development](#development)
+- [About](#about)
+- [Getting Started With Ember](#getting-started-with-ember)
+- [Development](#development)
 
 # About
 Recyclops is the front end web application for the sustainable citizen project.
