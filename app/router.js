@@ -7,6 +7,14 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('login');
+  this.route('signup');
+
+  this.route('challenges', function() {
+    this.route('new');
+    this.route('view');
+  });
+  this.route('404', { path: '/*path' });
 });
 
 export default Router;
