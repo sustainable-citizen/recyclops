@@ -1,3 +1,11 @@
-<h2>Login</h2>
+<form {{action "authenticate" on="submit"}}>
+  <label for="identification">Username:</label>
+  {{input id="identification" value=identification}}
+    <label for="password">Password:</label>
+    {{input id="password" value=password}}
+  <div class="">
+    <button type="submit">Login</button>
+  </div>
+</form>
 
 {{outlet}}
