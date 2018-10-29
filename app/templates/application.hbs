@@ -1,3 +1,36 @@
-<h1>Hello World!</h1>
+{{#bs-navbar
+  type=type
+  backgroundColor=bg
+  collapsed=collapsed
+  onCollapse=(action (mut collapsed) true)
+  onExpand=(action (mut collapsed) false)
+as |navbar|
+}}
+  {{navbar.toggle}}
+  {{#link-to "index" class="navbar-brand"}}Brand{{/link-to}}
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}
+        Google
+      {{/nav.item}}
+      {{#nav.item}}
+        Apple
+      {{/nav.item}}
+      {{#nav.dropdown as |dd|}}
+        {{#dd.toggle}}
+          Dropdown <span class="caret"></span>
+        {{/dd.toggle}}
+        {{#dd.menu as |ddm|}}
+          {{#ddm.item}}
+            FaceBook
+          {{/ddm.item}}
+          {{#ddm.item}}
+            Youtube
+          {{/ddm.item}}
+        {{/dd.menu}}
+      {{/nav.dropdown}}
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}
 
 {{outlet}}
