@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('new');
     this.route('view');
   });
+  
   this.route('404', { path: '/*path' });
 
 });

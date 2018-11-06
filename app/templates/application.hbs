@@ -1,20 +1,37 @@
-<header>
-  <nav class="navbar navbar-default nav-suscit">
-    <div class="img-header">
-      <a href="/">
-        <img
-          src="https://i.pinimg.com/originals/9c/d7/91/9cd791927b1bab330e04de94b4eb3855.jpg"
-          alt=""
-        >
-      </a>
-    </div>
-    <span>The Sustainable Citizen Project</span>
-    <span class="pull-right">
-      <a href="/login" class="btn btn-success">Login</a>
-      <a href="/signup" class="btn btn-success">Signup</a>
-    </span>
-  </nav>
-</header>
+<div class="header">
+  <header>
+    <nav class="navbar navbar-default nav-suscit">
+      <div>
+        {{#link-to "home" }}
+          <img
+            class="img-header"
+            src="https://i.pinimg.com/originals/9c/d7/91/9cd791927b1bab330e04de94b4eb3855.jpg"
+            alt=""
+          >
+        {{/link-to}}
+      </div>
+      <span>The Sustainable Citizen Project</span>
+      <span class="pull-right">
+        {{#if session.isAuthenticated}}
+          <a {{action "invalidateSession" class="btn btn-success"}}>Logout</a>
+        {{else}}
+          {{#link-to "login" class="btn btn-success"}}Login{{/link-to}}
+          {{#link-to "signup" class="btn btn-success"}}Signup{{/link-to}}
+        {{/if}}
+      </span>
+    </nav>
+  </header>
+</div>
 
+<div class="main">
+  {{outlet}}
+</div>
 
-{{outlet}}
+<div class="footer">
+  <footer>
+    <nav class="navbar navbar-default nav-suscit">
+      <span>Hire me.</span>
+      <span class="pull-right">I would like one job please.</span>
+    </nav>
+  </footer>
+</div>
