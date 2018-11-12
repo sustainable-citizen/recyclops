@@ -15,8 +15,8 @@
         {{#if session.isAuthenticated}}
           <a {{action "invalidateSession" class="btn btn-success"}}>Logout</a>
         {{else}}
-          {{#link-to "login" class="btn btn-success"}}Login{{/link-to}}
-          {{#link-to "signup" class="btn btn-success"}}Signup{{/link-to}}
+          <a href="login" class = "btn btn-success">Login</a>
+          <a href="signup" class = "btn btn-success">Signup</a>
         {{/if}}
       </span>
     </nav>
