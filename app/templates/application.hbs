@@ -1,24 +1,39 @@
 <div class="header">
   <header>
     <nav class="navbar navbar-default nav-suscit">
-      <div>
-        {{#link-to "home" }}
-          <img
-            class="img-header"
-            src="https://i.pinimg.com/originals/9c/d7/91/9cd791927b1bab330e04de94b4eb3855.jpg"
-            alt=""
-          >
-        {{/link-to}}
-      </div>
-      <span>The Sustainable Citizen Project</span>
-      <span class="pull-right">
+      <div class="col-md-4">
         {{#if session.isAuthenticated}}
-          <a {{action "invalidateSession" class="btn btn-success"}}>Logout</a>
+          {{#link-to "dashboard" }}
+            <img
+              class="img-header"
+              src="/assets/images/imageedit_14_4203673988.gif"
+              alt=""
+            >
+          {{/link-to}}
         {{else}}
-          <a href="login" class = "btn btn-success">Login</a>
-          <a href="signup" class = "btn btn-success">Signup</a>
+          {{#link-to "home" }}
+            <img
+              class="img-header"
+              src="/assets/images/imageedit_14_4203673988.gif"
+              alt=""
+            >
+          {{/link-to}}
         {{/if}}
-      </span>
+      </div>
+      <div class="col-md-4 title">
+        <span>The Sustainable Citizen Project</span>
+      </div>
+      <div class="col-md-4">
+        <span class="pull-right">
+          {{#if session.isAuthenticated}}
+            <a {{action "invalidateSession"}} class="btn btn-success">Logout</a>
+          {{else}}
+            <a href="login" class = "btn btn-success navAuth">Login</a>
+            <a href="signup" class = "btn btn-success navAuth">Signup</a>
+          {{/if}}
+        </span>
+      </div>
+
     </nav>
   </header>
 </div>
