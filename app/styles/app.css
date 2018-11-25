@@ -10,8 +10,20 @@ body{
 }
 
 .header{
-  margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
+
+.header + .core{
+  padding-top: 0px;
+}
+
+.core-auth{
+  padding-top:120px;
+}
+
 .footer {
     position: fixed;
     left: 0;
@@ -19,15 +31,30 @@ body{
     width: 100%;
     margin-bottom: 0px;
 }
+
+
+
 .nav-suscit{
   background-color: #4717F6;
   opacity: 0.95;
 }
 
+.nav-suscit-auth{
+  background-color: #3616E5;
+  opacity: 0.95;
+}
+
+.nav-suscit-bottom{
+  background-color: #4717F6;
+  opacity: 1;
+}
+
 .img-header{
   max-height: 100%;
   max-width: 100%;
-  height: 50px;
+  height: 30px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .title{
@@ -35,6 +62,11 @@ body{
 }
 
 .login-container{
+  text-align: center;
+}
+
+
+.new-challenge-container{
   text-align: center;
 }
 
@@ -49,5 +81,17 @@ body{
 .navAuth{
   float:right;
   margin-left: 5px;
+}
+
+.dash-outline{
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: #888;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+.core{
+  margin-top: 102px;
 }
 /* ID CSS */

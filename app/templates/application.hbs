@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" id="myHeader">
   <header>
     <nav class="navbar navbar-default nav-suscit">
       <div class="col-md-4">
@@ -26,25 +26,61 @@
       <div class="col-md-4">
         <span class="pull-right">
           {{#if session.isAuthenticated}}
-            <a {{action "invalidateSession"}} class="btn btn-success">Logout</a>
+            <button {{action "invalidateSession"}} class="btn btn-success navAuth">Logout</button>
           {{else}}
-            <a href="login" class = "btn btn-success navAuth">Login</a>
-            <a href="signup" class = "btn btn-success navAuth">Signup</a>
+
+            {{#link-to "signup"}}
+              <button type="button" name="signupButton" class="btn btn-success navAuth">Signup</button>
+            {{/link-to}}
+            {{#link-to "login"}}
+              <button type="button" name="loginButton" class="btn btn-success navAuth">Login</button>
+            {{/link-to}}
           {{/if}}
         </span>
       </div>
 
     </nav>
+    {{#if session.isAuthenticated}}
+      <nav class="navbar navbar-default nav-suscit-auth">
+        <div class="col-md-4">
+          {{#link-to "challenges.new"}}
+            <button
+              type="button"
+              name="newChallengeButton"
+              class="btn btn-success pull-left"
+            >
+              New Challenge
+            </button>
+          {{/link-to}}
+          {{#link-to "challenges.view"}}
+            <button
+              type="button"
+              name="viewChallengeButton"
+              class="btn btn-success pull-left"
+            >
+              View Challenges
+            </button>
+          {{/link-to}}
+        </div>
+      </nav>
+    {{/if}}
+
   </header>
 </div>
 
-<div class="main">
-  {{outlet}}
-</div>
+{{#if session.isAuthenticated}}
+  <div class="main core-auth">
+    {{outlet}}
+  </div>
+{{else}}
+  <div class="main core">
+    {{outlet}}
+  </div>
+{{/if}}
 
 <div class="footer">
   <footer>
-    <nav class="navbar navbar-default nav-suscit">
+    <nav class="navbar navbar-default nav-suscit-bottom">
       <span>Hire me.</span>
       <span class="pull-right">I would like one job please.</span>
     </nav>
