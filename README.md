@@ -34,3 +34,8 @@ Once you have cloned the project, you can run the following command from within 
 ember serve
 ```
 You will see some output letting you know which URL to enter in order to access the app. It will most likely be `localhost:4200`
+
+### Using the app
+As of now, the app is capable of secure login via oauth2. Signup is unavailable. Therfore, use requires an existing account.
+
+Once logged in, the app enables its user to add,modify,and delete challenges associated with Sustainable Citizen's "challenges" features.
