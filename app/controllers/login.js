@@ -8,7 +8,6 @@ export default Controller.extend(UnauthenticatedRouteMixin,{
   actions: {
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
-      console.log("authenticating with ID: " + identification + " and password " + password);
       this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
         this.set('errorMessage', reason);
       });

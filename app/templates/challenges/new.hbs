@@ -1,16 +1,16 @@
 <div class="container new-challenge-container">
   <form {{action "addChallenge" on="submit"}}>
     <div class="form-element">
-      <label for="chall_name">Challenge Start Date: </label>
+      <label for="chall_name">Challenge Name: </label>
       {{input id="chall_name" value=chall_name placeholder="Challenge Name"}}
     </div>
     <div class="form-element">
       <label for="chall_start_date">Challenge Start Date: </label>
-      {{input type="date" min="2018-09-01" max="2020-12-31" id="chall_start_date" value=chall_start_date}}
+      {{input type="datetime-local" min="2018-09-01" max="2020-12-31" id="chall_start_date" value=chall_start_date}}
     </div>
     <div class="form-element">
       <label for="chall_end_date">Challenge End Date: </label>
-      {{input type="date" min="2018-09-01" max="2020-12-31" id="chall_end_date" value=chall_end_date}}
+      {{input type="datetime-local" min="2018-09-01" max="2020-12-31" id="chall_end_date" value=chall_end_date}}
     </div>
     <div class="form-element">
       {{textarea id="chall_description" rows="5" cols="35" value=chall_description placeholder="Challenge Description"}}
@@ -19,6 +19,9 @@
       <button type="submit">Submit New Challenge</button>
     </div>
   </form>
+  {{#if inputError}}
+    <p>{{inputMessage}}</p>
+  {{/if}}
 </div>
 
 {{outlet}}
