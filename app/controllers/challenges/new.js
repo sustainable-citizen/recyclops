@@ -27,6 +27,7 @@ export default Controller.extend({
       Ember.$.ajax({
         url: "http://ec2-13-58-184-130.us-east-2.compute.amazonaws.com:3000/api/v1/challenges",
         type: "POST",
+        contentType:"application/json",
         data: JSON.stringify({
           "name" : chall_name,
           "description" : chall_description,
