@@ -3,6 +3,10 @@ import Controller from '@ember/controller';
 
 
 export default Controller.extend({
+  //add inject session for oauth
+  session: Ember.inject.service(),
+  //end of add inject session for oauth
+
   inputError: new Boolean(false),
   inputMessage: "",
   actions: {
@@ -23,21 +27,33 @@ export default Controller.extend({
       chall_start_date = convertToAPIDateString(is);
       let ie = new Date(chall_end_date);
       chall_end_date = convertToAPIDateString(ie);
+
+      //get the token from session
+      let token = this.get('session.data.authenticated.access_token');
+
       // POST to server.
-      Ember.$.ajax({
-        url: "http://ec2-13-58-184-130.us-east-2.compute.amazonaws.com:3000/api/v1/challenges",
-        type: "POST",
-        data: JSON.stringify({
-          "name" : chall_name,
-          "description" : chall_description,
-          "start_date" : chall_start_date,
-          "end_date" : chall_end_date
-        })
-      }).then(function(resp){
-        console.log(resp);
-      }).catch(function(error){
-        console.log(error);
-      });
+
+
+        Ember.$.ajax({
+          //add oauth token to header
+          headers: {
+            'Authorization': 'Bearer '+ token
+          },
+          // end of add oauth token to header
+          url: "http://192.168.1.52:3000/api/v1/challenges",
+          type: "POST",
+          data: JSON.stringify({
+            "name" : chall_name,
+            "description" : chall_description,
+            "start_date" : chall_start_date,
+            "end_date" : chall_end_date
+          })
+        }).then(function(resp){
+          console.log(resp);
+        }).catch(function(error){
+          console.log(error);
+        });
+
     }
   },
   invalidChallengeEntry(error){
