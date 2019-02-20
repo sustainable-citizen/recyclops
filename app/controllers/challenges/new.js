@@ -24,8 +24,12 @@ export default Controller.extend({
       let ie = new Date(chall_end_date);
       chall_end_date = convertToAPIDateString(ie);
       // POST to server.
+      var token = this.get('session.data.authenticated.access_token');
       Ember.$.ajax({
-        url: "http://ec2-13-58-184-130.us-east-2.compute.amazonaws.com:3000/api/v1/challenges",
+        headers: {
+            'Authorization': 'bearer '+ token
+        },
+        url: "https://api.thesci.net/api/v1/challenges",
         type: "POST",
         contentType:"application/json",
         data: JSON.stringify({

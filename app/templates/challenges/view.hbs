@@ -5,8 +5,6 @@
   </div>
   <div class="col-md-8">
     <div class="container regform">
-      <!-- <h1>Under Construction</h1>
-      <button {{action "getChallenges" on="click"}} name="button">Do a GET (Check console)</button> -->
       {{#each model as |challenge|}}
         {{#challenge-view name=challenge.name description=challenge.description end_date=challenge.end_date}}
 

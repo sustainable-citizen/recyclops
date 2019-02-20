@@ -2,5 +2,5 @@ import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-passwor
 
 
 export default OAuth2PasswordGrant.extend({
-  serverTokenEndpoint: "http://ec2-13-58-184-130.us-east-2.compute.amazonaws.com:3000/oauth/token"
+  serverTokenEndpoint: "https://api.thesci.net/oauth/token"
 });

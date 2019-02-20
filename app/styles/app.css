@@ -4,9 +4,14 @@
 /* Class CSS */
 
 body{
-  background-color: #0e0b16;
+  background-color: #F8F4EE;
   background-image: url("foggy-birds.png");
-  color: #E7DFDD;
+  color: #F1F5E9;
+}
+
+.main{
+  color: #0e0b16;
+  margin: 125px 25px 25px 25px;
 }
 
 .header{
@@ -17,11 +22,16 @@ body{
 }
 
 .header + .core{
-  padding-top: 0px;
+  padding-top: 25px;
+  margin-top: 100px;
 }
 
-.core-auth{
-  padding-top:120px;
+.header + .core-auth{
+  display: inline-block;
+  margin-left: 300px:
+  padding-top: 25px;
+  margin-left: 25%;
+  width:50%;
 }
 
 .footer {
@@ -32,20 +42,18 @@ body{
     margin-bottom: 0px;
 }
 
-
-
 .nav-suscit{
-  background-color: #4717F6;
+  background-color: #0392cf;
   opacity: 0.95;
 }
 
 .nav-suscit-auth{
-  background-color: #3616E5;
+  background-color: #7BC043;
   opacity: 0.95;
 }
 
 .nav-suscit-bottom{
-  background-color: #4717F6;
+  background-color: #0392cf;
   opacity: 1;
 }
 
@@ -68,10 +76,22 @@ body{
 
 .new-challenge-container{
   text-align: center;
+  margin:0 0 0 0;
+  background-color: rgba(205,205,205,.5);
+  padding-top: 20px;
+  padding-left: 0px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.new-challenge-form-section{
+  padding-left: 30%;
+  align:left;
+  width: 70%;
 }
 
 .form-element{
-  padding-bottom: 5px;
+  padding-bottom: 25px;
 }
 
 .regform{
@@ -91,10 +111,6 @@ body{
   margin-bottom: 28px;
 }
 
-.core{
-  margin-top: 102px;
-}
-
 .challenge-view{
   border: 2px solid #333;
   padding-top: 10px;
@@ -107,5 +123,12 @@ body{
 
 .container{
   padding-bottom:20px;
+}
+
+.new-challenge-form{
+  display:block;
+  width:100%;
+  /* padding-left: 20%; */
+  text-align:center
 }
 /* ID CSS */
