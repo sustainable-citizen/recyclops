@@ -52,10 +52,7 @@ nav{
 .right-side > button{
   background-color: #7BC043;
   float:right;
-}
-.sticky{
-  display;flex;
-  margin-bottom:100%;
+  justify-self: right;
 }
 /* ------------------------------------------------------------------ */
 
@@ -87,15 +84,16 @@ nav{
   border: 5px solid #7BC043;
 }
 
-.non-auth-pad{
-  top:0;
-  margin-top:0;
-  padding-top:45px;
-}
 /* Evenly space buttons */
 .auth-nav > .button-row{
   flex: 1;
   padding:12px;
+}
+
+.non-auth-pad{
+  top:0;
+  margin-top:0;
+  padding-top:45px;
 }
 
 .main{
