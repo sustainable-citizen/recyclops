@@ -1,11 +1,6 @@
 import $ from 'jquery';
 import Controller from '@ember/controller';
 
-// $.ajaxSetup({
-//   xhrFields:{
-//     withCredentials:true
-//   }
-// });
 
 export default Controller.extend({
   actions:{

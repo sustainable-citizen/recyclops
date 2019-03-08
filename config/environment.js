@@ -47,5 +47,12 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+
+  ENV['ember-simple-auth-token'] = {
+    refreshAccessTokens: true,
+    refreshLeeway: 300 // refresh 5 minutes (300 seconds) before expiration
+  };
+  
+
   return ENV;
 };

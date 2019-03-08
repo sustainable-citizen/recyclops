@@ -1,88 +1,78 @@
-<div class="header" id="myHeader">
-  <header>
-    <nav class="navbar navbar-default nav-suscit">
-      <div class="col-md-4">
+<nav id="navbar">
+  <div class="nav-container">
+    <div class="left-side">
+      {{#if session.isAuthenticated}}
+        {{#link-to "dashboard" }}
+          <img
+            class="img-header"
+            src="/assets/images/imageedit_14_4203673988.gif"
+            alt=""
+          >
+        {{/link-to}}
+      {{else}}
+        {{#link-to "home" }}
+          <img
+            class="img-header"
+            src="/assets/images/imageedit_14_4203673988.gif"
+            alt=""
+          >
+        {{/link-to}}
+      {{/if}}
+    </div>
+    <div class="center-title">
+      The Sustainable Citizen Project
+    </div>
+    <div class="right-side">
         {{#if session.isAuthenticated}}
-          {{#link-to "dashboard" }}
-            <img
-              class="img-header"
-              src="/assets/images/imageedit_14_4203673988.gif"
-              alt=""
-            >
-          {{/link-to}}
+          <button {{action "invalidateSession"}} class="btn btn-success navAuth">Logout</button>
         {{else}}
-          {{#link-to "home" }}
-            <img
-              class="img-header"
-              src="/assets/images/imageedit_14_4203673988.gif"
-              alt=""
-            >
+
+          {{#link-to "login"}}
+            <button type="button" name="loginButton" class="btn btn-success navAuth">Login</button>
+          {{/link-to}}
+          {{#link-to "signup"}}
+            <button type="button" name="signupButton" class="btn btn-success navAuth">Signup</button>
           {{/link-to}}
         {{/if}}
-      </div>
-      <div class="col-md-4 title">
-        <span>The Sustainable Citizen Project</span>
-      </div>
-      <div class="col-md-4">
-        <span class="pull-right">
-          {{#if session.isAuthenticated}}
-            <button {{action "invalidateSession"}} class="btn btn-success navAuth">Logout</button>
-          {{else}}
-
-            {{#link-to "signup"}}
-              <button type="button" name="signupButton" class="btn btn-success navAuth">Signup</button>
-            {{/link-to}}
-            {{#link-to "login"}}
-              <button type="button" name="loginButton" class="btn btn-success navAuth">Login</button>
-            {{/link-to}}
-          {{/if}}
-        </span>
-      </div>
-
-    </nav>
-    {{#if session.isAuthenticated}}
-      <nav class="navbar navbar-default nav-suscit-auth">
-        <div class="col-md-4">
-          {{#link-to "challenges.new"}}
-            <button
-              type="button"
-              name="newChallengeButton"
-              class="btn btn-success pull-left"
-            >
-              New Challenge
-            </button>
-          {{/link-to}}
-          {{#link-to "challenges.view"}}
-            <button
-              type="button"
-              name="viewChallengeButton"
-              class="btn btn-success pull-left"
-            >
-              View Challenges
-            </button>
-          {{/link-to}}
-        </div>
-      </nav>
-    {{/if}}
-
-  </header>
-</div>
+    </div>
+  </div>
+</nav>
 
 {{#if session.isAuthenticated}}
-  <div class="main core-auth">
-    {{outlet}}
+  <div class="auth-nav">
+    <div class="button-row">
+      {{#link-to "challenges.new"}}
+        <button
+          type="button"
+          name="newChallengeButton"
+          class="btn btn-primary newChallengeButton"
+        >
+          New Challenge
+        </button>
+      {{/link-to}}
+      {{#link-to "challenges.view"}}
+        <button
+          type="button"
+          name="viewChallengeButton"
+          class="btn btn-primary viewChallengeButton"
+        >
+          View Challenges
+        </button>
+      {{/link-to}}
+    </div>
   </div>
 {{else}}
-  <div class="main core">
-    {{outlet}}
-  </div>
+  <div class="non-auth-pad"></div>
 {{/if}}
 
-<div class="footer">
-  <footer>
-    <nav class="navbar navbar-default nav-suscit-bottom">
-      <span>JColvin</span>
-      <span class="pull-right">Sustainable Citizen, 2018</span>
-    </nav>
-  </footer>
+<div class="main">
+  {{outlet}}
 </div>
+
+<footer class="footer">
+  <div class="footer-a">Jack Colvin</div>
+  <div class="footer-b"></div>
+  <div class="footer-c">Sustainable Citizen,2019</div>
+</footer>
+
+<script src="/assets/nav.js"></script>
