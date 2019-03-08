@@ -1,6 +1,5 @@
-import Ember from 'ember';
 import Controller from '@ember/controller';
-
+import $ from 'jquery';
 
 export default Controller.extend({
   inputError: new Boolean(false),
@@ -25,7 +24,7 @@ export default Controller.extend({
       chall_end_date = convertToAPIDateString(ie);
       // POST to server.
       var token = this.get('session.data.authenticated.access_token');
-      Ember.$.ajax({
+      $.ajax({
         headers: {
             'Authorization': 'bearer '+ token
         },
@@ -39,9 +38,9 @@ export default Controller.extend({
           "end_date" : chall_end_date
         })
       }).then(function(resp){
-        console.log(resp);
+        // console.log(resp);
       }).catch(function(error){
-        console.log(error);
+        // console.log(error);
       });
     }
   },

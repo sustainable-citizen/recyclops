@@ -1,4 +1,6 @@
 import DS from 'ember-data';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
+import $ from 'jquery';
 
 function convertToAPIDateString(is){
   let is_ob ={};
@@ -17,15 +19,14 @@ function convertToAPIDateString(is){
   return (is_ob.year) + "-" + (is_ob.month) + "-" + (is_ob.date) + " " + (is_ob.hours) + ":" + (is_ob.minutes) + ":" + (is_ob.seconds);
 }
 
-export default DS.Adapter.extend({
+export default DS.JSONAPIAdapter.extend(DataAdapterMixin,{
   namespace: 'api/v1',
-  host: 'http://13.58.184.130:3000',
   primaryKey: 'id',
   findAll(store, type, sinceToken) {
     let query = { since: sinceToken };
 
     return new Promise(function(resolve, reject) {
-      $.getJSON(`http://13.58.184.130:3000/api/v1/challenges`, query).then(function(data) {
+      $.getJSON(`https://api.thesci.net/api/v1/challenges`, query).then(function(data) {
         data = data.filter(chall => chall.name != null);
         data.forEach(function(elem,index,object){
             elem.end_date = convertToAPIDateString(new Date(elem.end_date));

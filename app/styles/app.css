@@ -1,62 +1,143 @@
-
-/* HTML Element CSS */
-
-/* Class CSS */
-
 body{
   background-color: #F8F4EE;
   background-image: url("foggy-birds.png");
   color: #F1F5E9;
 }
+nav{
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Navbar css */
+.nav-container{
+  display:flex;
+  align-items:stretch;
+  height:3em;
+  width:100%;
+  background-color: #0392cf;
+  z-index: 1;
+}
+
+
+.nav-container > div{
+  margin: 5px;
+  width: 2px;
+}
+
+.left-side{
+  flex:1;
+  display:flex;
+}
+
+.left-side > img{
+  height: 100%;
+  flex:1;
+}
+
+.center-title{
+  flex:6;
+  text-align: center;
+  padding-top:7px;
+}
+
+.right-side{
+  flex:1;
+
+}
+
+.right-side > button{
+  background-color: #7BC043;
+  float:right;
+}
+.sticky{
+  display;flex;
+  margin-bottom:100%;
+}
+/* ------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------ */
+/* Overarching structure */
+
+
+/* Appliies to authNav and main */
+.ember-view > div{
+  display:flex;
+  align-items:stretch;
+  justify-content: center;
+  /* text-align:center; */
+  margin:0px auto;
+}
+
+/*  */
+.ember-view > div > div{
+  /* flex:1; */
+}
+
+/* Directly follows navbar */
+.auth-nav{
+  top:0;
+  margin-top:0;
+  padding-top:45px;
+  background-color: rgb(182, 231, 141);
+  border: 5px solid #7BC043;
+}
+
+.non-auth-pad{
+  top:0;
+  margin-top:0;
+  padding-top:45px;
+}
+/* Evenly space buttons */
+.auth-nav > .button-row{
+  flex: 1;
+  padding:12px;
+}
 
 .main{
-  color: #0e0b16;
-  margin: 125px 25px 25px 25px;
-}
-
-.header{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-.header + .core{
-  padding-top: 25px;
-  margin-top: 100px;
-}
-
-.header + .core-auth{
-  display: inline-block;
-  margin-left: 300px:
-  padding-top: 25px;
-  margin-left: 25%;
-  width:50%;
+  display:flex;
+  width: 95%;
+  max-width:900px;
+  padding-top: 20px;
+  padding-bottom:40px;
+  color:black;
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 0px;
-}
-
-.nav-suscit{
+  width: 100%;
+  padding: 0;
   background-color: #0392cf;
-  opacity: 0.95;
+  display:flex;
+  position:fixed;
+  bottom:0;
+  height:32px;
 }
 
-.nav-suscit-auth{
-  background-color: #7BC043;
-  opacity: 0.95;
+.footer div{
+  padding-top:3px;
+  font-size: 18px;
 }
 
-.nav-suscit-bottom{
-  background-color: #0392cf;
-  opacity: 1;
+.footer-a{
+  padding-left:7px;
+  text-align: left;
 }
-
+.footer-c{
+  padding-right:7px;
+  text-align: right;
+}
+.footer-a,.footer-c{
+  flex: 1;
+}
+.footer-b{
+  flex:3;
+}
+/* ------------------------------------------------------------------ */
+/* Navbar Elements */
 .img-header{
   max-height: 100%;
   max-width: 100%;
@@ -74,6 +155,8 @@ body{
 }
 
 
+/* ------------------------------------------------------------------ */
+/* New Challenge Page */
 .new-challenge-container{
   text-align: center;
   margin:0 0 0 0;
@@ -93,14 +176,15 @@ body{
 .form-element{
   padding-bottom: 25px;
 }
+/* ------------------------------------------------------------------ */
+/* View Challenge CSS */
+
+.view-challenge-component{
+  z-index:-10;
+}
 
 .regform{
   text-align:center;
-}
-
-.navAuth{
-  float:right;
-  margin-left: 5px;
 }
 
 .dash-outline{
@@ -114,21 +198,30 @@ body{
 .challenge-view{
   border: 2px solid #333;
   padding-top: 10px;
-  padding-bottom: 20px;
+  /* padding-bottom: 40px; */
   margin-bottom:10px;
   background-color:#888;
   opacity: 0.9;
   border-radius: 5px;
+  
 }
-
-.container{
-  padding-bottom:20px;
-}
+/* ------------------------------------------------------------------ */
 
 .new-challenge-form{
   display:block;
   width:100%;
   /* padding-left: 20%; */
   text-align:center
+}
+
+.newChallengeButton{
+  flex:1;
+}
+
+.viewChallengeButton{
+  flex:1;
+}
+#navbar{
+
 }
 /* ID CSS */

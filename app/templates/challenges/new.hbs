@@ -3,27 +3,56 @@
     <div class="form-element">
       <div class="new-challenge-form-section">
         <div class="row">
-            <div class="col-sm-6"> <label for="chall_name">Challenge Name: </label></div>
-            <div class="col-sm-6"> {{input id="chall_name" value=chall_name placeholder="Challenge Name"}}</div>
+          <div class="col-sm-6"> <label for="chall_name">Challenge Name: </label></div>
+          <div class="col-sm-6"> 
+            {{input 
+              id="chall_name" 
+              value=chall_name 
+              placeholder="Challenge Name"
+            }}
+          </div>
         </div>
-        <hr width=110%>
+        <hr width="110%">
         <div class="row">
           <div class="col-sm-6"><label for="chall_start_date">Challenge Start Date: </label></div>
-          <div class="col-sm-6">{{input type="datetime-local" min="2018-09-01" max="2020-12-31" id="chall_start_date" value=chall_start_date}}</div>
+          <div class="col-sm-6">
+            {{input 
+              type="datetime-local" 
+              min="2018-09-01" 
+              max="2020-12-31" 
+              id="chall_start_date" 
+              value=chall_start_date
+            }}
+          </div>
         </div>
-        <hr width=110%>
+        <hr width="110%">
         <div class="row">
           <div class="col-sm-6"><label for="chall_end_date">Challenge End Date: </label></div>
-          <div class="col-sm-6">{{input type="datetime-local" min="2018-09-01" max="2020-12-31" id="chall_end_date" value=chall_end_date}}</div>
+          <div class="col-sm-6">
+            {{input 
+              type="datetime-local" 
+              min="2018-09-01" 
+              max="2020-12-31" 
+              id="chall_end_date" 
+              value=chall_end_date
+            }}
+          </div>
         </div>
       </div>
     </div>
     <div class="form-element">
-        {{textarea id="chall_description" rows="7" cols="73" value=chall_description placeholder="Challenge Description"}}
+      {{textarea 
+        id="chall_description" 
+        rows="7" 
+        cols="40" 
+        value=chall_description 
+        placeholder="Challenge Description"
+      }}
+
     </div>
 
     <div class="form-element">
-        <button type="submit">Submit New Challenge</button>
+      <button type="submit">Submit New Challenge</button>
     </div>
   </form>
   {{#if inputError}}
